@@ -12,6 +12,7 @@ public class DBConnect {
     private Connection con;
     private Statement st;
     private ResultSet rs;
+    private PreparedStatement smt;
     
     public DBConnect(){
         
@@ -22,6 +23,7 @@ public class DBConnect {
             
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","admin");
             st = con.createStatement();
+           
             
         }catch(Exception ex){
         
@@ -50,12 +52,13 @@ public class DBConnect {
     
     public void putData(String name, int age){
         try{
-            
-            String query = "insert into Students(name,age) values (\"" +name+ "\",\"" +age+"\")";
-            System.out.println(query);
-            st.executeUpdate(query);
-            
-            
+            smt = con.prepareStatement("insert into Students values(?,?)");
+            //String query = "insert into Students(name,age) values (\"" +name+ "\",\"" +age+"\")";
+            //System.out.println(query);
+            //st.executeUpdate(query);
+            smt.setString(1,name);
+            smt.setInt(2, age);
+            smt.executeUpdate();
             
         }catch(Exception ex){
             
