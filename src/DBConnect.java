@@ -11,7 +11,7 @@ public class DBConnect {
     
     private Connection con;
     private Statement st;
-    private ResultSet rs;
+    ResultSet rs;
     private PreparedStatement smt;
     
     public DBConnect(){
@@ -37,12 +37,12 @@ public class DBConnect {
             
             String query = "Select * from Students";
             rs = st.executeQuery(query);
-            System.out.println("Records from database");
-            while(rs.next()){
+            //System.out.println("Records from database");
+            /*while(rs.next()){
                 String name = rs.getString("name");
                 String age = rs.getString("age");
-                System.out.println("Name: "+name+" "+"Age : "+age);
-            }
+                //System.out.println("Name: "+name+" "+"Age : "+age);
+            }*/
             
         }catch(Exception ex){
             System.out.println(ex);
