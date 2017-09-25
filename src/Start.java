@@ -20,7 +20,7 @@ public class Start {
         g1 = new DepChoice();
         g1.SetComponents();
         g1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        g1.setSize(300,300);
+        g1.setSize(680,480);
         g1.setVisible(true);
         
     

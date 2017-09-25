@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class DepChoice extends JFrame{
     
     JLabel j;
-    JButton b1, b2, b3;
+    JButton b1, b2, b3, b4;
     
     //Start s;
     
@@ -24,17 +24,19 @@ public class DepChoice extends JFrame{
          j  = new JLabel("Click the buttons below");
          b1 = new JButton("Insert");
          b2 = new JButton("View");
-         b3 = new JButton("");
+         b3 = new JButton("Modify");
+         b4 = new JButton("");
          setLayout(null);
          
          j.setBounds(20, 50, 200, 30);
          
-         b2.setBounds(130, 100, 100, 30);
-         
-         b1.setBounds(20,100,100,30);
+         b1.setBounds(10,100,100,30);
+         b2.setBounds(150, 100, 100, 30);
+         b3.setBounds(300, 100, 100, 30);
          
          b1.addActionListener(new Handler());
          b2.addActionListener(new Handler1());
+         b3.addActionListener(new Handler2());
          add(j);
          add(b1);
          add(b2);
@@ -53,7 +55,7 @@ public class DepChoice extends JFrame{
              DepInsert g = new DepInsert("DataBase");
              g.setComponents();
              g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-             g.setSize(300,300);
+             g.setSize(400,400);
              g.setVisible(true);
         }
         
@@ -67,8 +69,24 @@ public class DepChoice extends JFrame{
              DepView g2 = new DepView("DataBase");
              g2.setComponents();
              g2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-             g2.setSize(300,300);
+             g2.setSize(400,400);
              g2.setVisible(true);
+            
+            
+        }
+        
+    }
+    
+     class Handler2 implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+             DepModify g3 = new DepModify("DataBase");
+             g3.setComponents();
+             g3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+             g3.setSize(400,400);
+             g3.setVisible(true);
             
             
         }

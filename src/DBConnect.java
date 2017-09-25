@@ -65,4 +65,21 @@ public class DBConnect {
             System.out.println(ex);
         }            
     }
+    
+    public void updateData(String name, int age){
+        try{
+            smt = con.prepareStatement("update Students set age=? where name=?");  
+            //String query = "insert into Students(name,age) values (\"" +name+ "\",\"" +age+"\")";
+            //System.out.println(query);
+            //st.executeUpdate(query);
+            smt.setInt(1,age);
+            smt.setString(2, name);
+            smt.executeUpdate();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+            
+    
 }
