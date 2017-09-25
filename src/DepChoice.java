@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class DepChoice extends JFrame{
     
     JLabel j;
-    JButton b1, b2, b3, b4;
+    JButton b1, b2, b3, b4, b5;
     
     //Start s;
     
@@ -25,23 +25,27 @@ public class DepChoice extends JFrame{
          b1 = new JButton("Insert");
          b2 = new JButton("View");
          b3 = new JButton("Modify");
-         b4 = new JButton("");
+         b4 = new JButton("Delete");
+         b5 = new JButton("");
          setLayout(null);
          
          j.setBounds(20, 50, 200, 30);
          
          b1.setBounds(10,100,100,30);
-         b2.setBounds(150, 100, 100, 30);
-         b3.setBounds(300, 100, 100, 30);
+         b2.setBounds(130, 100, 100, 30);
+         b3.setBounds(270, 100, 100, 30);
+         b4.setBounds(390, 100, 100, 30);
          
          b1.addActionListener(new Handler());
          b2.addActionListener(new Handler1());
          b3.addActionListener(new Handler2());
+         b4.addActionListener(new Handler3());
          add(j);
          add(b1);
          add(b2);
          add(b3);
-         
+         add(b4); 
+         add(b5);
          
          
     }
@@ -92,6 +96,22 @@ public class DepChoice extends JFrame{
         }
         
     }
+     
+     
+     class Handler3 implements ActionListener{
+          @Override
+        public void actionPerformed(ActionEvent e) {
+            
+             DepDel g4 = new DepDel("DataBase");
+             g4.setComponents();
+             g4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+             g4.setSize(400,400);
+             g4.setVisible(true);
+            
+            
+        }
+         
+     }
     
    
     

@@ -80,6 +80,18 @@ public class DBConnect {
             System.out.println(e);
         }
     }
+    
+    
+    public void delData(String name){
+        try{
+            smt = con.prepareStatement("delete from Students where name=?");
+            smt.setString(1,name);
+            smt.executeUpdate();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
             
     
 }
