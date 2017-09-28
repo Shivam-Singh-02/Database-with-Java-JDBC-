@@ -7,7 +7,7 @@ public class DepModify extends JFrame {
     
     JLabel l1,l2,l3,l4;
     JTextField t1,t2;
-    JButton b1;
+    JButton b1, b2;
     
     DBConnect connect = new DBConnect();
     
@@ -27,10 +27,21 @@ public class DepModify extends JFrame {
     
     public DepModify(){
         
+             this.setComponents();
+             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+             this.setSize(400,400);
+             this.setLocationRelativeTo(null);
+             this.setVisible(true);
+        
     }
     
     public DepModify(String s){
         super(s);
+             this.setComponents();
+             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+             this.setSize(400,400);
+             this.setLocationRelativeTo(null);
+             this.setVisible(true);
     }
     
     public void setComponents(){
@@ -42,7 +53,7 @@ public class DepModify extends JFrame {
         t1 = new JTextField();
         t2 = new JTextField();
         b1 = new JButton("Update");
-        
+        b2 = new JButton("Menu");
         
     
         setLayout(null);
@@ -54,6 +65,8 @@ public class DepModify extends JFrame {
         t2.setBounds(140, 70, 100, 20);
         b1.setBounds(85, 150, 90, 30);
         b1.addActionListener(new Handler());
+        b2.setBounds(200, 150, 100, 30);
+        b2.addActionListener(new Handler1());
         l4.setBounds(20, 120, 200, 20);
 
     add(l1);
@@ -62,6 +75,7 @@ public class DepModify extends JFrame {
     add(l3);
     add(t2);
     add(b1);
+    add(b2);
     add(l4);
     
     
@@ -94,6 +108,15 @@ public class DepModify extends JFrame {
                
        
         
+    }
+    
+    class Handler1 implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            DepChoice g1 = new DepChoice();
+            dispose();
+        }
     }
    
     

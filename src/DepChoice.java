@@ -13,12 +13,21 @@ import java.awt.event.ActionListener;
  *
  * @author codedude
  */
-public class DepChoice extends JFrame{
+public class DepChoice extends JFrame {
     
     JLabel j;
     JButton b1, b2, b3, b4, b5;
     
     //Start s;
+    
+    public DepChoice(){
+         this.SetComponents();
+         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         
+         this.setSize(680,480);
+         this.setLocationRelativeTo(null);
+         this.setVisible(true);
+    }
     
     public void SetComponents(){
          j  = new JLabel("Click the buttons below");
@@ -50,17 +59,17 @@ public class DepChoice extends JFrame{
          
     }
     
+    
+    
     class Handler implements ActionListener{
 
-        //@Override
+        @Override
         public void actionPerformed(ActionEvent e) {
             
-        
+                      
              DepInsert g = new DepInsert("DataBase");
-             g.setComponents();
-             g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-             g.setSize(400,400);
-             g.setVisible(true);
+             
+             dispose();
         }
         
     }
@@ -71,11 +80,7 @@ public class DepChoice extends JFrame{
         public void actionPerformed(ActionEvent e) {
             
              DepView g2 = new DepView("DataBase");
-             g2.setComponents();
-             g2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-             g2.setSize(400,400);
-             g2.setVisible(true);
-            
+             dispose();
             
         }
         
@@ -87,10 +92,8 @@ public class DepChoice extends JFrame{
         public void actionPerformed(ActionEvent e) {
             
              DepModify g3 = new DepModify("DataBase");
-             g3.setComponents();
-             g3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-             g3.setSize(400,400);
-             g3.setVisible(true);
+            
+             dispose();
             
             
         }
@@ -103,10 +106,8 @@ public class DepChoice extends JFrame{
         public void actionPerformed(ActionEvent e) {
             
              DepDel g4 = new DepDel("DataBase");
-             g4.setComponents();
-             g4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-             g4.setSize(400,400);
-             g4.setVisible(true);
+            
+             dispose();
             
             
         }
